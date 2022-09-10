@@ -1,0 +1,103 @@
+@mixin fonts($fs, $ff, $fw, $fst, $lh) {
+    font-size: $fs;
+    font-family: $ff;
+    font-weight: $fw;
+    font-style: $fst;
+    line-height: $lh;
+}
+
+.bg {
+    height: 200px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .block3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            padding: 5px;
+
+            &.text {
+                text-align: center;
+
+                span {
+                    &.text1 {
+                        @include fonts(20px, 'Montserrat', 600, normal, 24px);
+                    }
+
+                    &.text2 {
+                        @include fonts(20px, 'Montserrat', 500, normal, 24px);
+                    }
+
+                    &.text3 {
+                        @include fonts(15px, 'Montserrat', 400, normal, 18px);
+                    }
+
+                    &.text4 {
+                        @include fonts(15px, 'Montserrat', 500, normal, 18px);
+                    }
+
+                    &.text5 {
+                        @include fonts(14px, 'Montserrat', 400, normal, 17px);
+                        color: #6AFFED;
+                    }
+
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+
+    }
+
+    .price {
+        &.text6 {
+            @include fonts(16px, 'Montserrat', 400, normal, 20px);
+        }
+
+        &.text7 {
+            @include fonts(16px, 'Montserrat', 500, normal, 20px);
+        }
+
+        &.text8 {
+            @include fonts(16px, 'Montserrat', 600, normal, 20px);
+            color: #FFFFFF;
+        }
+
+        color:#FFFFFF;
+    }
+
+    .phones {
+        max-width: 324.95px;
+        max-height: 250px;
+        img {
+        max-width: inherit;
+        max-height: inherit;
+        }
+    }
+    .pocket {
+            width:56px;
+            height:70px;
+            .pocket1 {
+                @include fonts(3px, 'Poppins', 600, normal, 4px);
+                color:#FFFFFF
+            }
+            .pocket2 {
+                @include fonts(15px, 'Poppins', 700, normal, 22px);
+            }
+            .pocket3 {
+                @include fonts(10px, 'Poppins', 700, normal, 10px);
+            }
+            .pocket4 {
+                @include fonts(8px, 'Poppins', 600, normal, 10px);
+            }
+            color:#FFF500;
+            text-align: center;
+    }
+}

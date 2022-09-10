@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .sort {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 10px;
+        margin-left: 20px;
+
+        .checkbox {
+            padding-left: 5px;
+
+            input {
+                display: none;
+            }
+
+            .fake {
+                width: 18px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .cards {
+        .card {
+            margin-top: 5px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px;
+            grid-template-rows: 270px 270px;
+            justify-content: center;
+            div {
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+}

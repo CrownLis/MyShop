@@ -1,0 +1,43 @@
+.container {
+    width:400px;
+    display:flex;
+    flex-direction: column;
+    margin:20px;
+    .btn {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border:8px solid #002045;
+        border-radius: 6px;
+        button {
+            margin:6px;
+            border:4px solid #002045;
+            border-radius: 3px;
+            padding:5px;
+            font-family: 'Solway';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 18px;
+            color: lightgray;
+            background-color: #002045;
+            transition-duration: 200ms;
+            transition-delay: 0ms;
+            transition-property: box-shadow;
+            &:hover { 
+                position: relative;
+                box-shadow: 2px 2px 4px black;
+                left:1px;
+                top:1px
+            }
+        }
+    }
+    .products {
+        display:flex;
+        flex-direction: column;
+        overflow: auto;
+        height:300px;
+        padding: 10px 16px;
+    }
+}

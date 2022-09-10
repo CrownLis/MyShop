@@ -1,0 +1,138 @@
+.container {
+    max-width: 1000px;
+    display: grid;
+    grid-template-areas:
+        'Image Price'
+        'Description Description'
+    ;
+    grid-template-columns: 520px 1fr;
+    grid-template-rows: 400px 200px;
+    margin: 40px auto;
+
+    .img {
+        margin: auto;
+        grid-area: Image;
+        border: 2px solid red;
+        border-radius: 5px;
+
+        img {
+            padding: 10px;
+            max-width: 360px;
+            max-height: 340px;
+        }
+    }
+
+    .price {
+        grid-area: Price;
+        border: 2px solid gold;
+        padding:10px;
+
+        .quantityBtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                background-color: inherit;
+                border: none;
+                max-width: 40px;
+                    max-height: 30px;
+
+                img {
+                    max-width: 40px;
+                    max-height: 30px;
+                }
+            }
+
+        }
+
+        .btnBuy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:20px;
+            border:5px solid yellow;
+        }
+
+        .priceValue {
+            display: flex;
+            justify-content: center;
+            font-family: 'Solway';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: flex-end;
+            border: 2px solid white;
+            align-items: center;
+            justify-content: center;
+
+            .ratingBody {
+                position: relative;
+
+                &::before {
+                    font-size: 40px;
+                    display: block;
+                    content: '★★★★★';
+                    text-align: center;
+                }
+
+                .ratingItems {
+                    display: flex;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    .ratingItem {
+                        flex: 0% 0% 20%;
+                        opacity: 0;
+                        height: 100%;
+                    }
+                }
+
+                .ratingActive {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0%;
+                    height: 100%;
+                    overflow: hidden;
+
+                    &::before {
+                        font-size: 40px;
+                        position: absolute;
+                        content: '★★★★★';
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: #ffd300
+                    }
+                }
+            }
+
+            .ratingValue {
+                font-size: 20px;
+                line-height: 0.75;
+            }
+        }
+    }
+
+    .description {
+        grid-area: Description;
+        margin: 20px;
+        border: 2px solid black;
+        font-family: 'Solway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 4px
+    }
+}

@@ -1,0 +1,126 @@
+.cart {
+    border: 5px solid #002045;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #002045;
+    div {
+        text-align: center;
+    }
+
+    .img {
+        margin: auto;
+        height: 50%;
+        padding-top: 5px;
+
+        img {
+            height: 110px;
+            max-width: 120px;
+            justify-content: center;
+        }
+    }
+
+    .name {
+        height: 30%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .price {
+        height: 6%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 10px;
+        line-height: 14px;
+        padding: 4px;
+    }
+
+    .btnBuy {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 10px;
+        line-height: 14px;
+        padding: 4px;
+        height: 8%;
+
+        button {
+            border: 2px solid #002045;
+            border-radius: 3px;
+            background-color: lightgray;
+
+            &:hover {
+                background-color: orange;
+                ;
+            }
+        }
+    }
+
+    .rating {
+        display: flex;
+        align-items: flex-end;
+        border: 2px solid white;
+        align-items: center;
+        max-height: 6%;
+
+        &:hover {
+            border: 2px solid #ffd300;
+            border-radius: 6px;
+        }
+
+        .ratingBody {
+            position: relative;
+
+            &::before {
+                display: block;
+                content: '★★★★★'
+            }
+
+            .ratingItems {
+                display: flex;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+
+                .ratingItem {
+                    flex: 0% 0% 20%;
+                    opacity: 0;
+                    height: 100%;
+                }
+            }
+
+            .ratingActive {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0%;
+                height: 100%;
+                overflow: hidden;
+
+                &::before {
+                    position: absolute;
+                    content: '★★★★★';
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    color: #ffd300
+                }
+            }
+        }
+
+        .ratingValue {
+            font-size: 10px;
+            line-height: 0.75;
+        }
+    }
+}

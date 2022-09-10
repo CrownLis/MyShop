@@ -1,0 +1,93 @@
+$orange: orange;
+
+.header {
+    background-color: #002045;
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 66px;
+
+        .logo {
+            display: flex;
+            align-items: flex-start;
+            padding-right: 40px;
+                text-decoration: none;
+               span {
+                height: 18px;
+                width: 55px;
+                font-family: 'Solway';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 18px;
+                color: #fff;
+
+                span {
+                    color: $orange
+                }
+
+            img {
+                height: 39px;
+                width: 39px
+            }
+        } 
+            }
+            
+
+        .navigation {
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                list-style-type: none;
+
+                li {
+                    font-family: 'Solway';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #fff;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .input {
+            display: flex;
+            flex-direction: row;
+
+            input {
+                width: 582px;
+                height: 31px;
+                background: rgba(255, 255, 255, 0.85);
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 3px;
+                outline: none;
+                padding-left: 10px;
+                color: rgba(0, 0, 0, 0.5);
+                font-family: 'Solway';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 14px;
+                &::placeholder {
+                    font-family: 'Solway';
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: rgba(0, 0, 0, 0.5);
+                    padding:10px 0px;
+                }
+            }
+        }
+    }
+}
