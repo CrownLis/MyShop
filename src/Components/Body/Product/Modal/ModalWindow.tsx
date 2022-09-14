@@ -1,5 +1,5 @@
 import { Form, Input, Modal } from "antd";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkAuth } from "../../../../../store/ducks/activeUser/asyncAction";
 import { useAppDispatch } from "../../../../../store/hooks";
@@ -8,29 +8,21 @@ import style from './ModalWindow.module.scss'
 
 interface ModalProps {
     visible:boolean
+    setVisible:Function
 }
 
-const ModalWindow: FC<ModalProps> = ({visible}) => {
+const ModalWindow: FC<ModalProps> = ({visible,setVisible}) => {
 
     const dispatch = useAppDispatch()
-    const [isModalVisible, setIsModalVisible] = useState(true);
-
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-
-    const handleOk = () => {
-        setIsModalVisible(false);
-    };
 
     const handleCancel = () => {
-        setIsModalVisible(false);
+        setVisible()
     };
 
     const onFinish = (value: Record<string, any>) => {
         dispatch(checkAuth(value))
+        setVisible()
     }
-
 
     const navigate = useNavigate()
 
@@ -38,19 +30,20 @@ const ModalWindow: FC<ModalProps> = ({visible}) => {
 
         <div className={style.container}>
             <Modal
-                title="Basic Modal"
+            className='modalLogIn'
+                title="Please login "
                 visible={visible}
-                onOk={handleOk}
                 onCancel={handleCancel}
                 closable={true}
                 footer={false}
+                
 
             >
                 <Form
                     onFinish={onFinish}
                 >
                     <Form.Item
-                        label="username"
+                        label="Username"
                         name="username"
                         rules={[{ required: true, message: 'Please input your username!' },
                         { type: 'string' }
@@ -60,14 +53,14 @@ const ModalWindow: FC<ModalProps> = ({visible}) => {
                     </Form.Item>
 
                     <Form.Item
-                        label="password"
+                        label="Password"
                         name="password"
                         rules={[{ required: true, message: 'Please input your password!' },
                         ]}
                     >
                         <Input.Password />
                     </Form.Item>
-                    <div>
+                    <div className={style.btn}>
                         <button type='submit'>Sign In</button>
                         <button type='button' onClick={e => navigate('/SignUp')}>Sign Up</button>
                     </div>

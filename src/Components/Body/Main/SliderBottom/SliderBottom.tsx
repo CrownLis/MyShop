@@ -11,12 +11,15 @@ const SliderBottom: FC = () => {
         <div className={style.slider}>
             <div> 
                 <img src={img1} />
+                <button></button>
             </div>
             <div>
                 <img src={img2} />
+                <button></button>
             </div>
             <div>
                 <img src={img3} />
+                <button></button>
             </div>
         </div>
     )

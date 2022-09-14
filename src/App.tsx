@@ -1,14 +1,15 @@
 import React, { FC, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './../assets/normalize.scss'
 import Header from './Components/Header/Header';
 import Body from './Components/Body/Body';
 
 import style from './App.module.scss'
+import 'antd/dist/antd.css'
+import './../normalize.css'
 import { fetchAllUsers } from '../store/ducks/users/asyncAction';
-import { getAllUsers } from '../store/ducks/users/selectors'
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { fetchAllCarts } from '../store/ducks/carts/asyncAction';
+import { useAppDispatch } from '../store/hooks';
+import { fetchAllProducts } from '../store/ducks/allProducts/asyncAction';
 
 
 
@@ -20,7 +21,7 @@ const dispatch = useAppDispatch()
 
 useEffect(() => {
     dispatch(fetchAllUsers())
-    dispatch(fetchAllCarts())
+    dispatch(fetchAllProducts())
 },[])
 
 return (

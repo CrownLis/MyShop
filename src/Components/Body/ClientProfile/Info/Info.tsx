@@ -50,7 +50,7 @@ const Info: FC = () => {
                     onFinish={onSubmit}
                 >
                     <Form.Item
-                        label="firstname"
+                        label="Firstname"
                         initialValue={activeUser?.name?.firstname}
                         name={['name', 'firstname']}
                         rules={[{ required: true, message: 'Please input your firstname!' },
@@ -60,7 +60,7 @@ const Info: FC = () => {
                         <Input readOnly={edit} />
                     </Form.Item>
                     <Form.Item
-                        label="lastname"
+                        label="Lastname"
                         initialValue={activeUser?.name?.lastname}
                         name={['name', 'lastname']}
                         rules={[{ required: true, message: 'Please input your lastname!' },
@@ -70,7 +70,7 @@ const Info: FC = () => {
                         <Input readOnly={edit} />
                     </Form.Item>
                     <Form.Item
-                        label="email"
+                        label="Email"
                         initialValue={activeUser?.email}
                         name="email"
                         rules={[{ required: true, message: 'Please input your email!' },
@@ -84,7 +84,7 @@ const Info: FC = () => {
                     </div>
                     <div style={{ display: visible }}>
                         <Form.Item
-                            label="city"
+                            label="City"
                             initialValue={activeUser?.address?.city}
                             name={['address', 'city']}
                             rules={[{ required: false },
@@ -94,7 +94,7 @@ const Info: FC = () => {
                             <Input readOnly={edit} />
                         </Form.Item>
                         <Form.Item
-                            label="street"
+                            label="Street"
                             initialValue={activeUser?.address?.street}
                             name={['address', 'street']}
                             rules={[{ required: false },
@@ -104,7 +104,7 @@ const Info: FC = () => {
                             <Input readOnly={edit} />
                         </Form.Item>
                         <Form.Item
-                            label="street number"
+                            label="Street number"
                             initialValue={activeUser?.address?.number}
                             name={['address', 'number']}
                             rules={[{ required: false },
@@ -113,7 +113,7 @@ const Info: FC = () => {
                             <Input readOnly={edit} />
                         </Form.Item>
                         <Form.Item
-                            label="zipcode"
+                            label="Zipcode"
                             initialValue={activeUser?.address?.zipcode}
                             name={['address', 'zipcode']}
                             rules={[{ required: false },
@@ -142,7 +142,7 @@ const Info: FC = () => {
                             <Input readOnly={edit} />
                         </Form.Item>
                         <Form.Item
-                            label="phone"
+                            label="Phone"
                             initialValue={activeUser?.phone}
                             name='phone'
                             rules={[{ required: false },

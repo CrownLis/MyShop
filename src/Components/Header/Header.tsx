@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { FC } from "react";
 import style from './Header.module.scss'
 import Logo from './../../../assets/img/logo.svg'
 import Categories from "./Categories/Categories";
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../../store/hooks";
-import { getActiveUser, getActiveUserData } from "../../../store/ducks/activeUser/selectors";
+import { getActiveUser } from "../../../store/ducks/activeUser/selectors";
+import { getAllCardsProducts } from "../../../store/ducks/allProducts/selectors";
+import { ICard } from "../../../types/types";
+import ModalWindowProduct from "./ModalWindowProduct/ModalWindowProduct";
 
 const Header: FC = () => {
+
+    const [foundProducts, setFoundProducts] = useState<ICard[]>([])
+    const [display,setDisplay] = useState('none')
+    const [findWord, setFindWord] = useState('')
+    const allProducts = useAppSelector(getAllCardsProducts)
+
+    const find = (value: string) => {
+        if (allProducts) {
+            setFindWord(value)
+            const x = allProducts.filter(a => a.title.includes(value[0].toUpperCase() + value.slice(1)))
+            setFoundProducts(x)
+        }
+    }
 
     const activeUser = useAppSelector(getActiveUser)
 
@@ -21,7 +37,16 @@ const Header: FC = () => {
                     </NavLink>
                 </div>
                 <div className={style.input}>
-                    <input placeholder={`Search for products, brands and more`} />
+                    <div>
+                    <input placeholder={`Search for products, brands and more`} value={findWord} onChange={e => find(e.target.value)} />
+                    </div>
+                    <div className={style.modalWindows} style={{ display: findWord !== ''? 'grid' : 'none' }}>
+                        {foundProducts.map(product =>
+                            <ModalWindowProduct
+                              product = {product}
+                            />
+                        )}
+                    </div>
                 </div>
                 <nav className={style.navigation}>
                     <ul>

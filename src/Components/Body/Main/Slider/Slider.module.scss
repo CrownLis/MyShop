@@ -76,28 +76,39 @@
     .phones {
         max-width: 324.95px;
         max-height: 250px;
+
         img {
-        max-width: inherit;
-        max-height: inherit;
+            max-width: inherit;
+            max-height: inherit;
         }
     }
+
     .pocket {
-            width:56px;
-            height:70px;
+        width: 56px;
+        height: 70px;
+
+        p {
+            margin-top:10px;
+            line-height: 8px;
             .pocket1 {
                 @include fonts(3px, 'Poppins', 600, normal, 4px);
-                color:#FFFFFF
+                color: #FFFFFF;
             }
+
             .pocket2 {
-                @include fonts(15px, 'Poppins', 700, normal, 22px);
+                @include fonts(15px, 'Poppins', 700, normal, 0.9em);
             }
+
             .pocket3 {
-                @include fonts(10px, 'Poppins', 700, normal, 10px);
+                @include fonts(10px, 'Poppins', 700, normal, 0.9em);
             }
+
             .pocket4 {
-                @include fonts(8px, 'Poppins', 600, normal, 10px);
+                @include fonts(6px, 'Poppins', 600, normal, 10px);
             }
-            color:#FFF500;
-            text-align: center;
+        }
+
+        color:#FFF500;
+        text-align: center;
     }
 }

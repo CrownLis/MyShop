@@ -7,36 +7,51 @@ import { useParams } from 'react-router-dom'
 import { sortCards } from '../../../../store/ducks/cards/cardsSlice'
 import arrowTop from './../../../../assets/img/arrowtop.png'
 import arrowBot from './../../../../assets/img/arrowbot.png'
+import { getAllCardsProducts, getLoadingAllProducts } from './../../../../store/ducks/allProducts/selectors'
 
 import style from './Cards.module.scss'
-import { Spin } from 'antd'
+import { Pagination } from 'antd'
 import Loader from '../../Loader/Loader'
+import { sortAllProducts } from '../../../../store/ducks/allProducts/allProductsSlice'
 
 
 
 const Cards: FC = () => {
 
-    const cards = useAppSelector(getCardsProducts)
-    const isLoading = useAppSelector(getLoadingCards)
     const dispatch = useAppDispatch()
     const { category } = useParams()
+
+    const allProducts = useAppSelector(getAllCardsProducts)
+    const cards = useAppSelector(getCardsProducts)
+    const isLoading = category === 'all'? useAppSelector(getLoadingAllProducts) : useAppSelector(getLoadingCards)
+
     const [sort, setSort] = useState('Price')
     const [SortFromLargest, setSortFromLargest] = useState('off')
+    const [currentPage, setCurrentPage] = useState(1)
+    const [itemOnPage] = useState(8)
+
+    const lastItem = currentPage * itemOnPage
+    const firstItem = lastItem - itemOnPage
+    const currentItems = category === 'all' ? allProducts?.slice(firstItem, lastItem) : cards?.slice(firstItem, lastItem)
 
     const sortBtn = (SortFromLargest: string) => {
         SortFromLargest === 'on' ? setSortFromLargest('off') : setSortFromLargest('on')
     }
 
     useEffect(() => {
-        dispatch(getCardsByCategory(`${category}`))
+        if (category !== 'all') {
+            dispatch(getCardsByCategory(`${category}`))
+        }
+        setCurrentPage(1)
     }, [category])
 
     useEffect(() => {
         dispatch(sortCards([sort, SortFromLargest]))
+        dispatch(sortAllProducts([sort,SortFromLargest]))
     }, [sort, SortFromLargest])
 
     return (
-        isLoading ? <Loader/> : (
+        isLoading ? <Loader /> : (
             <div className={style.container}>
                 <div className={style.sort}>
                     <div className={style.select}>
@@ -55,26 +70,41 @@ const Cards: FC = () => {
                     </div>
                 </div>
                 <div className={style.cards}>
-                    {cards && cards.length > 0 ? (
-                       <div className={style.card}>
-                       {cards?.map((p: { id: number, title: string, price: number, description: string, category: string, image: string, rating: { count: number, rate: number } }) => (
+                    {currentItems && currentItems.length > 0 ? (
+                        <div className={style.card}>
+                            {currentItems?.map((p:
+                                {
+                                    id: number,
+                                    title: string,
+                                    price: number,
+                                    description: string,
+                                    category: string,
+                                    image: string,
+                                    rating: { count: number, rate: number }
+                                }) => (
 
-                           <Card
-                               id={p.id}
-                               title={p.title}
-                               price={p.price}
-                               description={p.description}
-                               category={p.category}
-                               image={p.image}
-                               rating={p.rating} />
-   
-                       ))
-                       }
-                       </div>
+                                <Card
+                                    id={p.id}
+                                    title={p.title}
+                                    price={p.price}
+                                    description={p.description}
+                                    category={p.category}
+                                    image={p.image}
+                                    rating={p.rating} />
+
+                            ))}
+                        </div>
                     ) : (
                         <div>Product is empty</div>
                     )
-                }
+                    }
+                    <Pagination
+                        defaultCurrent={1}
+                        current={currentPage}
+                        total={category === 'all' ? allProducts?.length : cards?.length}
+                        pageSize={itemOnPage}
+                        onChange={(page) => setCurrentPage(page)}
+                    />
                 </div>
             </div>
         )

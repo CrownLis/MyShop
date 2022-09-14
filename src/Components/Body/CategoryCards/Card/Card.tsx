@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { addProduct } from '../../../../../store/ducks/activeUser/activeUserSlice'
+import { getActiveUser } from '../../../../../store/ducks/activeUser/selectors'
+import { useAppDispatch, useAppSelector } from '../../../../../store/hooks'
 import style from './Card.module.scss'
 
 interface CardsProps {
@@ -13,8 +16,19 @@ interface CardsProps {
 }
 
 const Card: FC<CardsProps> = ({ id, title, price, description, category, image, rating }) => {
+
+const activeUser = useAppSelector(getActiveUser)
+const dispatch = useAppDispatch()
+const navigate = useNavigate()
+
+    const addProductToCart = () => {
+        activeUser.activeUser ?
+            dispatch(addProduct({ productId: Number(id), quantity: 1 })) :
+            navigate('/SignIn')
+    }
+
     return (
-        <div className={style.cart}>
+        <div className={style.card}>
             <div className={style.img}>
                 <NavLink to={`${id}`}><img src={image}></img></NavLink></div>
             <div className={style.name}>{title}</div>
@@ -33,7 +47,7 @@ const Card: FC<CardsProps> = ({ id, title, price, description, category, image, 
             </div>
             <div className={style.price}>{price}$</div>
             <div className={style.btnBuy}>
-                <button>Add to cart</button>
+                <button onClick={addProductToCart}>Add to cart</button>
             </div>
         </div>
     )

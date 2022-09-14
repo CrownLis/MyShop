@@ -12,7 +12,6 @@ const SignIn: FC = () => {
 
     const onFinish = async (value: Record<string, any>) => {
        const response = await dispatch(checkAuth(value))
-        console.log(dispatch(checkAuth(value)))
         if (response.meta.requestStatus === 'fulfilled') {
             navigation('/main')
         }
@@ -24,7 +23,7 @@ const SignIn: FC = () => {
                 onFinish={onFinish}
             >
                 <Form.Item
-                    label="username"
+                    label="Username"
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' },
                     { type: 'string' }
@@ -34,7 +33,7 @@ const SignIn: FC = () => {
                 </Form.Item>
 
                 <Form.Item
-                    label="password"
+                    label="Password"
                     name="password"
                     rules={[{ required: true, message: 'Please input your password!' },
                     ]}

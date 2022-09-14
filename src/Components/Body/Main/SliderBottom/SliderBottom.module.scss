@@ -1,5 +1,34 @@
 .slider {
     display: flex;
     flex-direction: row;
-    padding-top:20px
+    padding-top: 20px;
+
+    div:first-child {
+        button {
+            position: relative;
+            height: 30px;
+            width: 98px;
+            left: 45px;
+            bottom: 60px;
+            background-color: inherit;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+    }
+
+    div {
+        button {
+            position: relative;
+            height: 30px;
+            width: 99px;
+            left: 60px;
+            bottom: 60px;
+            background-color: inherit;
+            border: 1px solid white;
+            border-radius: 4px;
+        &:hover {
+            box-shadow: 2px 2px 4px;
+        }
+        }
+    }
 }

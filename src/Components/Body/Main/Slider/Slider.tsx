@@ -18,8 +18,8 @@ const Slider: FC = () => {
                 <p><span className={style.pocket1}>Shoppy</span><br />
                     <span className={style.pocket2}>BIG</span><br />
                     <span className={style.pocket3}>SAVING DAYS</span><br />
-                </p>
                 <span className={style.pocket4}>25th - 29th July</span>
+                </p>
             </div>
             <div className={style.phones}><img src={bg2}></img></div>
             <div className={style.block3}>

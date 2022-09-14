@@ -19,10 +19,6 @@ import Loader from '../../Loader/Loader'
 const Product: FC = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const showModal = () => {
-        setIsModalVisible(true);
-    };
-
     const activeUser = useAppSelector(getActiveUser)
     const { id } = useParams()
     const dispatch = useAppDispatch()
@@ -33,7 +29,11 @@ const Product: FC = () => {
     const addProductToCart = () => {
         activeUser.activeUser ?
             dispatch(addProduct({ productId: Number(id), quantity: amount })) :
-            showModal()
+            setIsModalVisible(!isModalVisible)
+    }
+
+    const closeModal = () => {
+        setIsModalVisible(false)
     }
 
     useEffect(() => {
@@ -43,7 +43,10 @@ const Product: FC = () => {
     return isLoading ? <Loader /> : (
         product ?
             <div className={style.container}>
-                <div className={style.img}><img src={product.image}></img></div>
+                <h2 className={style.title}>{product.title}</h2>
+                <div className={style.img}>
+                    <img src={product.image} alt={product.title}/>
+                    </div>
                 <div className={style.price}>
                     <div className={style.priceValue}> {product.price}$</div>
                     <div className={style.rating}>
@@ -68,6 +71,7 @@ const Product: FC = () => {
                         <button onClick={e => addProductToCart()}>ADD TO CART</button>
                         <ModalWindow
                             visible={isModalVisible}
+                            setVisible={closeModal}
                         />
                     </div>
                 </div>

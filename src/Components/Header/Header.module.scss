@@ -9,14 +9,15 @@ $orange: orange;
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 66px;
+        height: 60px;
 
         .logo {
             display: flex;
             align-items: flex-start;
             padding-right: 40px;
-                text-decoration: none;
-               span {
+            text-decoration: none;
+
+            span {
                 height: 18px;
                 width: 55px;
                 font-family: 'Solway';
@@ -30,15 +31,16 @@ $orange: orange;
                     color: $orange
                 }
 
-            img {
-                height: 39px;
-                width: 39px
+                img {
+                    height: 39px;
+                    width: 39px
+                }
             }
-        } 
-            }
-            
+        }
+
 
         .navigation {
+            padding-top:10px;
             ul {
                 display: flex;
                 flex-direction: row;
@@ -52,6 +54,7 @@ $orange: orange;
                     font-size: 12px;
                     line-height: 14px;
                     color: #fff;
+
                     a {
                         text-decoration: none;
                         color: #fff;
@@ -61,31 +64,53 @@ $orange: orange;
         }
 
         .input {
-            display: flex;
-            flex-direction: row;
+            display: inline-block;
+            height: 60px;
+            padding-top: 15px;
 
-            input {
-                width: 582px;
-                height: 31px;
-                background: rgba(255, 255, 255, 0.85);
-                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-                border-radius: 3px;
-                outline: none;
-                padding-left: 10px;
-                color: rgba(0, 0, 0, 0.5);
-                font-family: 'Solway';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 14px;
-                &::placeholder {
+            div {
+                input {
+                    width: 582px;
+                    height: 31px;
+                    background: rgba(255, 255, 255, 0.85);
+                    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+                    border-radius: 3px;
+                    outline: none;
+                    padding-left: 10px;
+                    color: rgba(0, 0, 0, 0.5);
                     font-family: 'Solway';
                     font-style: normal;
-                    font-weight: 300;
-                    font-size: 10px;
-                    line-height: 12px;
-                    color: rgba(0, 0, 0, 0.5);
-                    padding:10px 0px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 14px;
+
+                    &::placeholder {
+                        font-family: 'Solway';
+                        font-style: normal;
+                        font-weight: 300;
+                        font-size: 10px;
+                        line-height: 12px;
+                        color: rgba(0, 0, 0, 0.5);
+                        padding: 10px 0px;
+                    }
+                }
+            }
+
+            .modalWindows {
+                display: grid;
+                grid-template-columns: 250px 250px;
+                max-height: 240px;
+                justify-content: center;
+                align-items: center;
+                overflow: auto;
+                background-color: rgba(255, 255, 255, 0.85);
+                border: 4px solid rgba(0, 0, 0, 0.25);
+                border-top: 0;
+                z-index: 1;
+                position: relative;
+                transition: all .3s;
+                &>div {
+                    margin:10px;
                 }
             }
         }

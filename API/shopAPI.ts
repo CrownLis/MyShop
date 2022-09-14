@@ -5,6 +5,10 @@ const shopWebApi = axios.create({
     baseURL: 'https://fakestoreapi.com'
 })
 
+export const getAllProducts = async () => {
+    return await shopWebApi.get('/products')
+}
+
 export const getCategories = async () => {
     return await shopWebApi.get('/products/categories')
 }

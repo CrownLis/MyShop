@@ -2,3 +2,6 @@
     display: flex;
     flex-direction: column;
 }
+::-webkit-scrollbar {
+    width: 12px;               /* ширина всей полосы прокрутки */
+  }

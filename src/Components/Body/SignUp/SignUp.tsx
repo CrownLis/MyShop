@@ -124,7 +124,7 @@ const SignUp: FC = () => {
                             { type: 'string' }
                             ]}
                         >
-                            <Input.Password />
+                            <Input />
                         </Form.Item>
                     </div>
                     <div>

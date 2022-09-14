@@ -3,14 +3,14 @@ import cardsSlice from './ducks/cards/cardsSlice'
 import productSlice from './ducks/product/productSlice'
 import usersSlice from './ducks/users/usersSlice'
 import activeUserSlice from './ducks/activeUser/activeUserSlice'
-import cartsSlice from './ducks/carts/cartsSlice'
+import allProductsSlice from './ducks/allProducts/allProductsSlice'
 
 const rootReducer = combineReducers({
     cards: cardsSlice,
     product: productSlice,
     users:usersSlice,
     activeUser:activeUserSlice,
-    carts: cartsSlice
+    allProducts:allProductsSlice
     })
 
 const store = configureStore({
