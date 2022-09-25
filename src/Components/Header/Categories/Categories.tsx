@@ -12,12 +12,12 @@ import style from './Categories.module.scss'
 const Categories: FC = () => {
     return (
         <div className={style.categories}>
-            <nav>
-                <NavLink to='/all' className={style.category}><img src={All} /><span>All</span></NavLink>
-                <NavLink to='/electronics' className={style.category}> <img src={Electronics} /><span>Electronics</span></NavLink>
-                <NavLink to='/jewelery' className={style.category}> <img src={Home} /><span>jewelery</span></NavLink>
-                <NavLink to="/men's clothing" className={style.category}> <img src={Appliances} /><span>men's clothing</span></NavLink>
-                <NavLink to="/women's clothing" className={style.category}> <img src={Travel}></img><span>women's clothing</span></NavLink>
+            <nav className="row justify-content-md-center">
+                <NavLink to='/all' className={`${style.category} col-xs-1 col-sm-1 col-md-1 col-lg-1`}><img src={All} /><span>All</span></NavLink>
+                <NavLink to='/electronics' className={`${style.category} col-xs-1 col-sm-1 col-md-1 col-lg-1`}> <img src={Electronics} /><span>Electronics</span></NavLink>
+                <NavLink to='/jewelery' className={`${style.category} col-xs-1 col-sm-1 col-md-1 col-lg-1`}> <img src={Home} /><span>jewelery</span></NavLink>
+                <NavLink to="/men's clothing" className={`${style.category} col-xs-1 col-sm-1 col-md-1 col-lg-1`}> <img src={Appliances} /><span>men's clothing</span></NavLink>
+                <NavLink to="/women's clothing" className={`${style.category} col-xs-1 col-sm-1 col-md-1 col-lg-1`}> <img src={Travel}></img><span>women's clothing</span></NavLink>
             </nav>
         </div>
     )

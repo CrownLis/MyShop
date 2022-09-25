@@ -69,9 +69,9 @@ const Cards: FC = () => {
                         </label>
                     </div>
                 </div>
-                <div className={style.cards}>
+                <div className={`${style.cards}`}>
                     {currentItems && currentItems.length > 0 ? (
-                        <div className={style.card}>
+                        <div className={`${style.card} row`}>
                             {currentItems?.map((p:
                                 {
                                     id: number,

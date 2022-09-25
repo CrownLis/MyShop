@@ -28,7 +28,7 @@ const navigate = useNavigate()
     }
 
     return (
-        <div className={style.card}>
+        <div className={`${style.card} col-md-3`}>
             <div className={style.img}>
                 <NavLink to={`${id}`}><img src={image}></img></NavLink></div>
             <div className={style.name}>{title}</div>

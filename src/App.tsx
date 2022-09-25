@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import './../assets/normalize.scss'
 import Header from './Components/Header/Header';
 import Body from './Components/Body/Body';
-
 import style from './App.module.scss'
 import 'antd/dist/antd.css'
 import './../normalize.css'
