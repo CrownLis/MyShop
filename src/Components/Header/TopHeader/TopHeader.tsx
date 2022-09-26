@@ -4,7 +4,7 @@ import { getActiveUser } from '../../../store/activeUser/selectors'
 import { getAllCardsProducts } from '../../../store/allProducts/selectors'
 import { useAppSelector } from '../../../store/hooks'
 import { ICard } from '../../../types/types'
-import Logo from './../../../../assets/img/logo.svg'
+import Logo from './../../../assets/img/logo.svg'
 import ModalWindowProduct from '../ModalWindowProduct/ModalWindowProduct'
 
 import style from './TopHeader.module.scss'
@@ -20,7 +20,7 @@ const TopHeader: FC = () => {
     const find = (value: string) => {
         if (allProducts) {
             setFindWord(value)
-            const x = allProducts.filter(a => a.title.includes(value[0].toUpperCase() + value.slice(1)))
+            const x = allProducts.filter((a: { title: string | string[] }) => a.title.includes(value[0].toUpperCase() + value.slice(1)))
             setFoundProducts(x)
         }
     }

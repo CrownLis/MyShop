@@ -44,7 +44,7 @@ const Info: FC = () => {
     }
 
     return (
-        <div className={`${style.container} col-xs-10 col-sm-8 col-md-6 col-lg-4`}>
+        <div className={`${style.container} col-xs-8 col-sm-8 col-md-6 col-lg-4`}>
             <div>
                 <h2>Info about you</h2>
                 <Form

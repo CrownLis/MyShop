@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { IProductInCart } from './../../../../../types/types'
-import Cross from './../../../../../../assets/img/cross.png'
-import ArrowLeft from './../../../../../../assets/img/btn_left.png'
-import ArrowRight from './../../../../../../assets/img/btn_right.png'
+import Cross from './../../../../../assets/img/cross.png'
+import ArrowLeft from './../../../../../assets/img/btn_left.png'
+import ArrowRight from './../../../../../assets/img/btn_right.png'
 
 import { useAppDispatch } from './../../../../../store/hooks'
 import { decreaseAmountProduct, deleteProduct, increaseAmountProduct } from '../../../../../store/activeUser/activeUserSlice'

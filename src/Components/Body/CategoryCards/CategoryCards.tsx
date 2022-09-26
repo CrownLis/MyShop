@@ -8,8 +8,8 @@ import { sortAllProducts } from '../../../store/allProducts/allProductsSlice'
 import { Pagination } from 'antd'
 import { useParams } from 'react-router-dom'
 
-import arrowTop from './../../../../assets/img/arrowtop.png'
-import arrowBot from './../../../../assets/img/arrowbot.png'
+import arrowTop from './../../../assets/img/arrowtop.png'
+import arrowBot from './../../../assets/img/arrowbot.png'
 
 import Loader from '../../Loader'
 import Card from './Card'
