@@ -1,22 +1,25 @@
 import React, { FC, useEffect, useState } from 'react'
-import { getCardsProducts, getLoadingCards } from '../../../../store/ducks/cards/selectors'
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
-import { getCardsByCategory } from '../../../../store/ducks/cards/asyncAction'
-import Card from './Card/Card'
+import { useAppDispatch, useAppSelector } from './../../../store/hooks'
+import { getAllCardsProducts, getLoadingAllProducts } from '../../../store/allProducts/selectors'
+import { getCardsProducts, getLoadingCards } from '../../../store/cards/selectors'
+import { getCardsByCategory } from '../../../store/cards/asyncAction'
+import { sortCards } from '../../../store/cards/cardsSlice'
+import { sortAllProducts } from '../../../store/allProducts/allProductsSlice'
+import { Pagination } from 'antd'
 import { useParams } from 'react-router-dom'
-import { sortCards } from '../../../../store/ducks/cards/cardsSlice'
+
 import arrowTop from './../../../../assets/img/arrowtop.png'
 import arrowBot from './../../../../assets/img/arrowbot.png'
-import { getAllCardsProducts, getLoadingAllProducts } from './../../../../store/ducks/allProducts/selectors'
 
-import style from './Cards.module.scss'
-import { Pagination } from 'antd'
-import Loader from '../../Loader/Loader'
-import { sortAllProducts } from '../../../../store/ducks/allProducts/allProductsSlice'
+import Loader from '../../Loader'
+import Card from './Card'
 
+import style from './CategoryCards.module.scss'
 
 
-const Cards: FC = () => {
+
+
+const CategoryCards: FC = () => {
 
     const dispatch = useAppDispatch()
     const { category } = useParams()
@@ -38,6 +41,11 @@ const Cards: FC = () => {
         SortFromLargest === 'on' ? setSortFromLargest('off') : setSortFromLargest('on')
     }
 
+const changePage = (page:number) => {
+setCurrentPage(page)
+window.scrollTo(0,200)
+}
+
     useEffect(() => {
         if (category !== 'all') {
             dispatch(getCardsByCategory(`${category}`))
@@ -53,7 +61,7 @@ const Cards: FC = () => {
     return (
         isLoading ? <Loader /> : (
             <div className={style.container}>
-                <div className={style.sort}>
+                <div className={`${style.sort} container-fluid`}>
                     <div className={style.select}>
                         <select onChange={e => setSort(e.target.value)} value={sort}>
                             <option>Price</option>
@@ -98,17 +106,19 @@ const Cards: FC = () => {
                         <div>Product is empty</div>
                     )
                     }
+                    <div className={style.pagination}>
                     <Pagination
                         defaultCurrent={1}
                         current={currentPage}
                         total={category === 'all' ? allProducts?.length : cards?.length}
                         pageSize={itemOnPage}
-                        onChange={(page) => setCurrentPage(page)}
+                        onChange={(page) => changePage(page)}
                     />
+                    </div>
                 </div>
             </div>
         )
     )
 }
 
-export default Cards
+export default CategoryCards

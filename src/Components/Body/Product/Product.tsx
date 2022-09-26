@@ -1,17 +1,18 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { addProduct } from '../../../../store/ducks/activeUser/activeUserSlice'
-import { getActiveUser } from '../../../../store/ducks/activeUser/selectors'
-import { getProductsById } from '../../../../store/ducks/product/asyncAction'
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
-import { ICard } from '../../../../types/types'
-import { getProduct, getProductLoading } from './../../../../store/ducks/product/selectors'
-import ModalWindow from './Modal/ModalWindow'
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { addProduct } from '../../../store/activeUser/activeUserSlice'
+import { getActiveUser } from '../../../store/activeUser/selectors'
+import { getProductsById } from '../../../store/product/asyncAction'
+import { getProduct, getProductLoading } from '../../../store/product/selectors'
+import { ICard } from '../../../types/types'
+import ModalWindow from './ModalWindow'
 import ArrowLeft from './../../../../assets/img/btn_left.png'
 import ArrowRight from './../../../../assets/img/btn_right.png'
+import Loader from '../../Loader'
 
 import style from './Product.module.scss'
-import Loader from '../../Loader/Loader'
+
 
 
 

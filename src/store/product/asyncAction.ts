@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ICard } from '../../../types/types';
-import { getProductById } from './../../../API/shopAPI';
+import { ICard } from './../../types/types';
+import { getProductById } from './../../API/shopAPI';
 
 
 export const getProductsById = createAsyncThunk<ICard,number, { rejectValue:string }>(

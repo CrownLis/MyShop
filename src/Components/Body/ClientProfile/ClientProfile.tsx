@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
-import Cart from './Cart/Cart'
+import Cart from './Cart'
+import Info from './Info'
+
 import style from './ClientProfile.module.scss'
-import Info from './Info/Info'
 
 
 
@@ -9,7 +10,7 @@ const ClientProfile: FC = () => {
 
 
     return (
-        <div className={style.container}>
+        <div className={`${style.container} row`}>
            <Info/>
            <Cart/>
         </div >

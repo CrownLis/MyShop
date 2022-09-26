@@ -1,10 +1,11 @@
 import { Form, Input } from 'antd';
 import React, { FC, useEffect, useState } from 'react'
-import { getProductById } from '../../../../API/shopAPI';
-import { getActiveUser } from '../../../../store/ducks/activeUser/selectors';
-import { useAppSelector } from '../../../../store/hooks';
-import { ICard, IProductInCart } from '../../../../types/types';
-import Loader from '../../Loader/Loader';
+import { getProductById } from '../../../API/shopAPI';
+
+import { getActiveUser } from '../../../store/activeUser/selectors';
+import { useAppSelector } from '../../../store/hooks';
+import { IProductInCart, ICard } from '../../../types/types';
+import Loader from '../../Loader';
 import Product from '../ClientProfile/Cart/Product/Product'
 
 import style from './Cart.module.scss'
@@ -46,8 +47,8 @@ const Cart: FC = () => {
     }, [activeUser.cart?.products])
 
     return (
-        productsInCart ? <div className={style.container}>
-            <div className={style.products}>
+        productsInCart ? <div className={`${style.container} row`}>
+            <div className={`${style.products} col-xs-8 col-sm-6 col-md-5 col-lg-5`}>
                 {productsInCart ? productsInCart.map((item: { product: ICard, amount: number }) => (
                     <Product
                         product={item.product}
@@ -55,7 +56,7 @@ const Cart: FC = () => {
                     />
                 )) : null}
             </div>
-            <div className={style.form}>
+            <div className={`${style.form} col-xs-8 col-sm-6 col-md-5 col-lg-5`}>
                 <h4>Total:{total}$</h4>
                 <div className={style.btnFirst}>
                     <label htmlFor='delivery1' style={!delivery ? { color: '#ffffd5' } : {}}>Pickup</label>

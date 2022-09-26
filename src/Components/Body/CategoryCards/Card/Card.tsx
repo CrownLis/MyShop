@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { addProduct } from '../../../../../store/ducks/activeUser/activeUserSlice'
-import { getActiveUser } from '../../../../../store/ducks/activeUser/selectors'
-import { useAppDispatch, useAppSelector } from '../../../../../store/hooks'
+
+
+import { useAppDispatch, useAppSelector } from './../../../../store/hooks'
+import { addProduct } from '../../../../store/activeUser/activeUserSlice'
+import { getActiveUser } from '../../../../store/activeUser/selectors'
 import style from './Card.module.scss'
 
 interface CardsProps {
@@ -28,7 +30,7 @@ const navigate = useNavigate()
     }
 
     return (
-        <div className={`${style.card} col-md-3`}>
+        <div className={`${style.card} col-xs-12 col-sm-5 col-md-4 col-lg-3`}>
             <div className={style.img}>
                 <NavLink to={`${id}`}><img src={image}></img></NavLink></div>
             <div className={style.name}>{title}</div>

@@ -1,22 +1,22 @@
 import React from "react";
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import Cards from "./CategoryCards/Cards";
-import Main from "./Main/Main";
-import Product from "./Product/Product";
-import SignIn from "./SignIn/SignIn";
-import SignUp from "./SignUp/SignUp";
 
 import style from './Body.module.scss'
-import ClientProfile from "./ClientProfile/ClientProfile";
-import Cart from "./Cart/Cart";
-import ModalWindow from "./Product/Modal/ModalWindow";
+import Cart from "./Cart";
+import CategoryCards from "./CategoryCards";
+import ClientProfile from "./ClientProfile";
+import Main from "./Main";
+import Product from "./Product";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+
 
 const Body: FC = () => {
     return (
         <div className={style.container}>
             <Routes>
-                <Route path="/:category" element={<Cards />} />
+                <Route path="/:category" element={<CategoryCards />} />
                 <Route path="/main" element={<Main />} />
                 <Route path='/:category/:id' element={<Product />} />
                 <Route path="/signUp" element={<SignUp />} />

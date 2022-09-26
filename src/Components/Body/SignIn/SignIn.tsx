@@ -1,8 +1,9 @@
 import { Form, Input } from 'antd'
 import React, { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { checkAuth } from '../../../../store/ducks/activeUser/asyncAction'
-import { useAppDispatch } from '../../../../store/hooks'
+import { checkAuth } from '../../../store/activeUser/asyncAction'
+import { useAppDispatch } from '../../../store/hooks'
+
 import style from './SignIn.module.scss'
 
 const SignIn: FC = () => {

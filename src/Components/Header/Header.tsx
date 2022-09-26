@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Categories from "./Categories/Categories";
-import TopHeader from "./TopHeader/TopHeader";
+import Categories from "./Categories";
+import TopHeader from "./TopHeader";
 
 import style from './Header.module.scss'
 

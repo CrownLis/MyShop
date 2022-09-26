@@ -1,6 +1,5 @@
 import React from "react";
 import { FC } from "react";
-import style from './Slider.module.scss'
 import background from './../../../../../assets/img/background.jpg'
 import bg1 from './../../../../../assets/img/bg1.png'
 import bg2 from './../../../../../assets/img/bg2.png'
@@ -10,11 +9,13 @@ import btn_right from './../../../../../assets/img/btn_right.png'
 import btn_left from './../../../../../assets/img/btn_left.png'
 import { NavLink } from "react-router-dom";
 
+import style from './Slider.module.scss'
+
 const Slider: FC = () => {
 
     return (
         <div className={`${style.bg} row`} style={{ backgroundImage: `url(${background})` }}>
-            <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"><img src={btn_left} /></div>
+            <div className="col-xs-0 col-sm-0 col-md-1 col-lg-1"><img src={btn_left} /></div>
             <div className={`${style.pocket} col-xs-12 col-sm-6 col-md-2 col-lg-1`} style={{ backgroundImage: `url(${bg1})` }}>
                 <p><span className={style.pocket1}>Shoppy</span><br />
                     <span className={style.pocket2}>BIG</span><br />
@@ -58,7 +59,7 @@ const Slider: FC = () => {
                 <span className={style.text6}>from</span>
                 <span className={style.text8}> ₹1,25,900</span>
             </div>
-            <div className={`${style.right} col-xs-1 col-sm-1 col-md-1 col-lg-1`}><img src={btn_right} /></div>
+            <div className={`${style.right} col-xs-0 col-sm-0 col-md-1 col-lg-1`}><img src={btn_right} /></div>
         </div>
     )
 }

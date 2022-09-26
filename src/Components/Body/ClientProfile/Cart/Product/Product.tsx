@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
-import { IProductInCart } from '../../../../../../types/types'
+import { IProductInCart } from './../../../../../types/types'
 import Cross from './../../../../../../assets/img/cross.png'
 import ArrowLeft from './../../../../../../assets/img/btn_left.png'
 import ArrowRight from './../../../../../../assets/img/btn_right.png'
 
+import { useAppDispatch } from './../../../../../store/hooks'
+import { decreaseAmountProduct, deleteProduct, increaseAmountProduct } from '../../../../../store/activeUser/activeUserSlice'
+
 import style from './Product.module.scss'
-import { decreaseAmountProduct, deleteProduct, increaseAmountProduct } from '../../../../../../store/ducks/activeUser/activeUserSlice'
-import { useAppDispatch } from '../../../../../../store/hooks'
+
 
 
 const Product: FC<IProductInCart> = ({ product, amount }) => {

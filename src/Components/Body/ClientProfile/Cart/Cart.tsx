@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getProductById } from '../../../../../API/shopAPI'
-import { getActiveUser } from '../../../../../store/ducks/activeUser/selectors'
-import { useAppSelector } from '../../../../../store/hooks'
-import { ICard, IProductInCart } from '../../../../../types/types'
+import { getProductById } from '../../../../API/shopAPI'
+import { getActiveUser } from '../../../../store/activeUser/selectors'
+import { useAppSelector } from '../../../../store/hooks'
+import { ICard, IProductInCart } from '../../../../types/types'
+import Product from './Product'
+
 import style from './Cart.module.scss'
-import Product from './Product/Product'
+
 
 const Cart: FC = () => {
 
@@ -43,7 +45,7 @@ const Cart: FC = () => {
 
 
     return (
-        <div className={style.container}>
+        <div className={`${style.container} col-xs-8 col-sm-8 col-md-6 col-lg-4`}>
             <div className={style.btn}>
                 <button onClick={e => navigate(`/cart/${activeUser.cart?.id}`)}>Go to cart</button>
                 <button onClick={showBtn}>Show cart</button>

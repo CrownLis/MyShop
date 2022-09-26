@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IUser } from '../../../types/types';
-import { fetchUsers, SignUp } from '../../../API/shopAPI';
+import { IUser } from './../../types/types';
+import { fetchUsers, SignUp } from './../../API/shopAPI';
 
 
 export const fetchAllUsers = createAsyncThunk<IUser[],void, { rejectValue:string }>(

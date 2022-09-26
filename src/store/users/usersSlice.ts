@@ -1,4 +1,4 @@
-import { IUser } from '../../../types/types';
+import { IUser } from './../../types/types';
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAllUsers, register } from "./asyncAction";
 

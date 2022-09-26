@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react"
-import { ICard } from "../../../../types/types"
+import { ICard } from "./../../../types/types"
 
 import style from './ModalWindowProduct.module.scss'
 

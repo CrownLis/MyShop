@@ -1,8 +1,8 @@
 import { Form, Input, Modal } from "antd";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { checkAuth } from "../../../../../store/ducks/activeUser/asyncAction";
-import { useAppDispatch } from "../../../../../store/hooks";
+import { checkAuth } from "../../../../store/activeUser/asyncAction";
+import { useAppDispatch } from "../../../../store/hooks";
 
 import style from './ModalWindow.module.scss'
 

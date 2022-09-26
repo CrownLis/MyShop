@@ -1,4 +1,4 @@
-import { ICard } from '../../../types/types';
+import { ICard } from './../../types/types';
 import { createSlice, PayloadAction, createAsyncThunk, Action } from "@reduxjs/toolkit";
 import { getProductsById } from "./asyncAction";
 

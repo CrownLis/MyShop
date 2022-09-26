@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { addNewCart, fetchUsers, getUserCart, logIn, updateUser } from '../../../API/shopAPI';
-import { ICart, IUser } from '../../../types/types';
+import { addNewCart, fetchUsers, getUserCart, logIn, updateUser } from '../../API/shopAPI';
+import { ICart, IUser } from '../../types/types';
 
 export const checkAuth = createAsyncThunk<any, Record<string, any>, { rejectValue: Error }>(
     'activeUser/logIn',

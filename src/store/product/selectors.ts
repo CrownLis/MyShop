@@ -1,4 +1,4 @@
-import { RootState } from './../../store';
+import { RootState } from './../store';
 
 export const getProduct = (state: RootState) => {
     return state.rootReducer.product.product

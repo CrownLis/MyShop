@@ -1,13 +1,14 @@
 import React, { FC, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { getActiveUser } from '../../../../store/ducks/activeUser/selectors'
-import { getAllCardsProducts } from '../../../../store/ducks/allProducts/selectors'
-import { useAppSelector } from '../../../../store/hooks'
-import { ICard } from '../../../../types/types'
+import { getActiveUser } from '../../../store/activeUser/selectors'
+import { getAllCardsProducts } from '../../../store/allProducts/selectors'
+import { useAppSelector } from '../../../store/hooks'
+import { ICard } from '../../../types/types'
 import Logo from './../../../../assets/img/logo.svg'
 import ModalWindowProduct from '../ModalWindowProduct/ModalWindowProduct'
 
 import style from './TopHeader.module.scss'
+
 
 const TopHeader: FC = () => {
 
@@ -33,7 +34,7 @@ const TopHeader: FC = () => {
                     <span>Shoppy <br /><span className={style.orange}>plus</span></span>
                 </NavLink>
             </div>
-            <div className={`${style.input} col-xs-12 col-sm-12 col-md-7 col-lg-7`}>
+            <div className={`${style.input} col-xs-12 col-sm-6 col-md-6 col-lg-6`}>
                     <input placeholder={`Search for products, brands and more`} value={findWord} onChange={e => find(e.target.value)} />
                 <div className={style.modalWindows} style={{ display: findWord !== '' ? 'grid' : 'none' }}>
                     {foundProducts.map(product =>

@@ -1,9 +1,10 @@
 import { Form, Input } from 'antd'
 import React, { FC, useState } from 'react'
-import { editUser } from '../../../../../store/ducks/activeUser/asyncAction'
-import { getActiveUserData } from '../../../../../store/ducks/activeUser/selectors'
-import { useAppDispatch, useAppSelector } from '../../../../../store/hooks'
-import { IUser } from '../../../../../types/types'
+
+import { useAppDispatch, useAppSelector } from './../../../../store/hooks'
+import { IUser } from './../../../../types/types'
+import { editUser } from '../../../../store/activeUser/asyncAction'
+import { getActiveUserData } from '../../../../store/activeUser/selectors'
 
 import style from './Info.module.scss'
 
@@ -43,7 +44,7 @@ const Info: FC = () => {
     }
 
     return (
-        <div className={style.container}>
+        <div className={`${style.container} col-xs-10 col-sm-8 col-md-6 col-lg-4`}>
             <div>
                 <h2>Info about you</h2>
                 <Form

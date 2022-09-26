@@ -1,8 +1,9 @@
-import { Form, Input, Modal } from 'antd'
+import { Form, Input } from 'antd'
 import React, { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { register } from '../../../../store/ducks/users/asyncAction'
-import { useAppDispatch } from '../../../../store/hooks'
+import { useAppDispatch } from '../../../store/hooks'
+import { register } from '../../../store/users/asyncAction'
+
 
 import style from './SignUp.module.scss'
 

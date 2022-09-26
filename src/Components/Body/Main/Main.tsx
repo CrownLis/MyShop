@@ -1,7 +1,8 @@
 import React from "react";
 import { FC } from "react";
-import Slider from "./Slider/Slider";
-import SliderBottom from "./SliderBottom/SliderBottom";
+import Slider from "./Slider";
+import SliderBottom from "./SliderBottom";
+
 
 import style from './Main.module.scss'
 
