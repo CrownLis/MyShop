@@ -70,6 +70,6 @@ module.exports = {
   devServer: {
     historyApiFallback:true,
     static:
-      path.resolve(__dirname, './dist')
+      path.resolve(__dirname, './public')
   }
 }
