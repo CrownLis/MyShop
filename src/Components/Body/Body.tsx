@@ -20,9 +20,9 @@ const Body: FC = () => {
                 <Route path="/main" element={<Main />} />
                 <Route path='/:category/:id' element={<Product />} />
                 <Route path="/signUp" element={<SignUp />} />
-                <Route path='/signIn' element={<SignIn/>}/>
-                <Route path='/profile/:id' element={<ClientProfile/>} />
-                <Route path='/cart/:id' element={<Cart/>}/>
+                <Route path='/signIn' element={<SignIn />} />
+                <Route path='/profile/:id' element={<ClientProfile />} />
+                <Route path='/cart/:id' element={<Cart />} />
             </Routes>
         </div>
     )

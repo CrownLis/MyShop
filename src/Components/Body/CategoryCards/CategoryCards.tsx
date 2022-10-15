@@ -31,7 +31,7 @@ const CategoryCards: FC = () => {
     const [sort, setSort] = useState('Price')
     const [SortFromLargest, setSortFromLargest] = useState('off')
     const [currentPage, setCurrentPage] = useState(1)
-    const [itemOnPage] = useState(8)
+    const [itemOnPage] = useState(9)
 
     const lastItem = currentPage * itemOnPage
     const firstItem = lastItem - itemOnPage

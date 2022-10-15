@@ -1,2 +1,2 @@
-import SliderBottom from "./SliderBottom";
-export default SliderBottom
+import SliderBottom from './SliderBottom';
+export default SliderBottom;

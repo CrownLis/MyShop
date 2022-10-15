@@ -1,2 +1,2 @@
-import ClientProfile from "./ClientProfile";
-export default ClientProfile
+import ClientProfile from './ClientProfile';
+export default ClientProfile;

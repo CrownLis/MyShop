@@ -1,2 +1,2 @@
-import CategoryCards from './CategoryCards'
-export default CategoryCards
+import CategoryCards from './CategoryCards';
+export default CategoryCards;

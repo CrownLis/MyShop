@@ -1,0 +1,52 @@
+.carousel {
+    padding-top: 20px;
+    width: 100%;
+    overflow: hidden;
+
+    ul {
+        padding-left: 0;
+        display: flex;
+        width: 100%;
+        position: relative;
+        flex-wrap: nowrap;
+        margin: 0px;
+        min-height: 240px;
+        max-height: 240px;
+
+    }
+
+    .item {
+        text-align: center;
+        padding: 0px;
+        background-color: brown;
+        list-style-type: none;
+        font-size: 30px;
+    }
+
+    div {
+        button {
+            position: fixed;
+            max-width: 40px;
+            max-height: 80px;
+            border: 0px;
+            padding: 0px;
+            border-radius: 10px;
+            z-index: 1;
+
+            img {
+                width: 40px;
+            }
+
+            &:first-child {
+                top: 500px;
+                left: 0px
+            }
+
+            &:last-child {
+                top: 500px;
+                right: 0px;
+
+            }
+        }
+    }
+}

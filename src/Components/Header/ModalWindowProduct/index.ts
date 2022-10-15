@@ -1,2 +1,2 @@
-import ModalWindowProduct from "./ModalWindowProduct";
-export default ModalWindowProduct
+import ModalWindowProduct from './ModalWindowProduct';
+export default ModalWindowProduct;

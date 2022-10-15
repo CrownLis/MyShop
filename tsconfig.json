@@ -2,7 +2,6 @@
 
   {
     "compilerOptions": {
-      "plugins": [{ "name": "typescript-plugin-css-modules" }],
       "target": "ESNext",
       "module": "umd",
       "lib": [

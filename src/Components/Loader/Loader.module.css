@@ -5,7 +5,7 @@
   width: 70px;
   height: 70px;
   align-self: center;
-margin: auto;
+margin: 0 auto;
 }
 
 .lds_spinner div {

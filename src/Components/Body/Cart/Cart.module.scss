@@ -1,9 +1,11 @@
 .container {
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    padding:40px;
 
     .products {
-        width: 400px;
+        max-width: 400px;
         display: flex;
         flex-direction: column;
         max-height: 420px;
@@ -14,11 +16,20 @@
         display: flex;
         flex-direction: column;
         width: 300px;
-        margin: 40px;
         border: 4px solid #002045;
         border-radius: 6px;
         align-items: center;
-        max-height: 360px;
+        form {
+            div {
+                div {
+                    div{
+                        div{
+                            flex:auto !important
+                        }
+                    }
+                }
+            }
+        }
         h4 {
             font-family: 'Solway';
             font-style: normal;

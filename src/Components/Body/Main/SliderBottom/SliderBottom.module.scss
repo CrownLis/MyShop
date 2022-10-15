@@ -1,46 +1,26 @@
-.slider {
-    display: flex;
-    flex-direction: row;
-    padding-top: 20px;
-    max-height: 290px;
-    overflow-x: scroll;
-    flex-wrap: nowrap;
-    max-width: 1280px;
+.item {
+    padding: 0px;
 
-div {
-    display: flex;
-    justify-content: center;
-    img {
-        margin:0 auto
-    }
-}
-
-    div:first-child {
-        button {
-            position: relative;
-            height: 30px;
-            width: 98px;
-            left: 45px;
-            bottom: 60px;
-            background-color: inherit;
-            border: 1px solid white;
-            border-radius: 4px;
-        }
+    &:nth-child(1) {
+        background-color: red;
     }
 
-    div {
-        button {
-            position: relative;
-            height: 30px;
-            width: 99px;
-            left: 60px;
-            bottom: 60px;
-            background-color: inherit;
-            border: 1px solid white;
-            border-radius: 4px;
-        &:hover {
-            box-shadow: 2px 2px 4px;
-        }
-        }
+    &:nth-child(2) {
+        background-color: green;
+    }
+
+    &:nth-child(3) {
+        background-color: brown;
+    }
+
+    &:nth-child(4) {
+        background-color: blue;
+    }
+
+    &:nth-child(5) {
+        background-color: wheat;
+    }
+    &:nth-child(5) {
+        background-color: black;
     }
 }

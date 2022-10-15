@@ -26,7 +26,7 @@ useEffect(() => {
 
 return (
     <BrowserRouter>
-        <div style={{maxWidth:1280}} className={style.container}>
+        <div className={style.container}>
             <Header />
             <Body/>
         </div>

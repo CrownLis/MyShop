@@ -1,2 +1,2 @@
-import TopHeader from "./TopHeader";
-export default TopHeader
+import TopHeader from './TopHeader';
+export default TopHeader;
