@@ -1,4 +1,4 @@
-import { RootState } from '../../store';
+import { RootState } from './../store';
 
 export const getAllCardsProducts = (state: RootState) => {
   return state.rootReducer.allProducts.products;
